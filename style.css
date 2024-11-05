@@ -1,0 +1,54 @@
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color:beige;
+    min-height: 100%;
+}
+
+.todoWrapper{
+    justify-content: center;
+    margin-top: 3rem;
+    min-width: 140px;
+}
+
+.todoTitle{
+    padding: 1rem;
+    text-align: center;
+    color: rosybrown;
+    font-size: 5rem;
+}
+
+.todoBox{
+    background-color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+.todoInputBox{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    height: 2.5rem;
+    border-bottom: 2px solid aliceblue;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+button{
+    background-color: transparent;
+    border: 0;
+}
+
+.todo{
+    font-size: 1.2rem;
+    padding: 0.1rem;
+    width: 85%;
+}
+
+.todoItemCheck{}
+
+.todoItem{}
