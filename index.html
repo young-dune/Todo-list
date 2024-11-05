@@ -3,40 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
     <link rel="stylesheet" href="style.css">
-    <title>Todo-list</title>
 </head>
 <body>
-    <div class="todoWrapper"></div>
-        <div class="todoTitle">todo</div>
-        <div class="todoBox">
-            <div class="todoInputBox">
-                <input type="text" class="todoInput" placeholder="해야 할 일?">
-            </div>
-            <ul class="todoList">
-                <li class="todoItemCheck">
-                    <div class="checkBox"></div>
-                    <div class="todo">첫번째 할 일</div>
-                    <button class="delBtn">x</button>
-                </li>
-                <li class="todoItem">
-                    <div class="checkBox"></div>
-                    <div class="todo">두번째 할 일</div>
-                    <button class="delBtn">x</button>
-                </li>
-                <li class="todoItem">
-                    <div class="checkBox"></div>
-                    <div class="todo">세번째 할 일</div>
-                    <button class="delBtn">x</button>
-                </li>
-            </ul>
-            
-            
-            <div class="todoOpt">
-            </div>
-
-
-        </div>
+    <h1 class="title">To-do List</h1>
+    <form id="todo-form">
+        <input type="text" id
+        ="todo-input" placeholder="오늘의할일은 무엇인가요?" required />
+        <button type="submit"id="submit-btn">Enter</button>
+    </form>
     
+    <ul id="todo-list">
+    </ul>
+
+    <script src="todo.js"></script>
 </body>
 </html>
