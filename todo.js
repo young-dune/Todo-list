@@ -1,10 +1,11 @@
 const todoForm = document.getElementById("todo-form");
 const todoInput = document.querySelector("#todo-form input");
 const todoList = document.getElementById("todo-list");
-const myArr = [];
+let myArr = []; //Local storage속 이전의 myArr도 기억하고 싶기 때문에 const 말고 let으로 배열을 선언해준다. 
 
 function saveTodos(){
     localStorage.setItem("todos",JSON.stringify(myArr));
+    //arr 값을 string으로 저장하고 싶을 때, JSON.stringify()를 사용한다.
 }
 
 function deleteTodo(event){ //작성된 할 일을 삭제하는 기능
@@ -15,7 +16,7 @@ function deleteTodo(event){ //작성된 할 일을 삭제하는 기능
     부모 태그인 <li></li>를 말한다. */
 }
 
-function paintTodo(newTodo){ //할 일이 입력될 때마다 작성되는 기능
+function paintTodo(newTodo){ //item을 화면에 출력해주는 함수
     const li = document.createElement("li");
     const span = document.createElement("span");
     span.innerText = newTodo;
@@ -37,3 +38,12 @@ function handleToSubmit(event){ //click에 대한 event
 }
 
 todoForm.addEventListener("submit",handleToSubmit);
+
+const savedTodos = localStorage.getItem("todos");
+
+if(savedTodos !== null){
+    const parsedTodos = JSON.parse(savedTodos) //local storage에서 가져온 string을 arr로 바꿔준다.
+    myArr = parsedTodos; //새로 입력된 배열을 myArr 배열에 덮어씌운다.
+    parsedTodos.forEach(paintTodo);
+    //arrow function
+}
